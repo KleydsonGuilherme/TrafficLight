@@ -1,0 +1,102 @@
+:root{
+    background-color: rgba(44, 44, 44, 0.8);
+    --red-light: rgb(60, 0, 0);
+    --yellow-light: rgb(60, 60, 0);
+    --green-light: rgb(0, 60, 0);
+}
+.activeAuto:root{
+    animation-name: auto;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+.activeRed:root{
+    --red-light: red;
+    --yellow-light: rgb(60, 60, 0);
+    --green-light: rgb(0, 60, 0);
+}
+.activeYellow:root{
+    --red-light: rgb(60, 0, 0);
+    --yellow-light: yellow;
+    --green-light: rgb(0, 60, 0);
+}
+.activeGreen:root{
+    --red-light: rgb(60, 0, 0);
+    --yellow-light: rgb(60, 60, 0);
+    --green-light: rgb(5, 221, 5);
+}
+.activeAlert:root{
+    animation-name: alert;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes alert{
+    0%{--yellow-light: rgb(60, 60, 0);}
+    100%{--yellow-light: yellow;}
+}
+
+@keyframes auto{/**/
+    0%{--red-light: red;
+        --yellow-light: rgb(60, 60, 0);
+        --green-light: rgb(0, 60, 0);}
+
+    50%{--red-light: rgb(60, 0, 0);
+        --yellow-light: yellow;
+        --green-light: rgb(0, 60, 0);}
+
+    100%{--red-light: rgb(60, 0, 0);
+        --yellow-light: rgb(60, 60, 0);
+        --green-light: rgb(5, 221, 5);}
+}
+
+
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#lights{
+    background-color: gray;
+    width: 200px;
+    height: 450px;
+    border-radius: 15%;
+    border: 5px;
+    border-style: solid;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#red{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style: solid;
+    background-color: var(--red-light);
+}
+#yellow{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style: solid;
+    background-color: var(--yellow-light);
+}
+#green{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-style: solid;
+    background-color: var(--green-light);
+}
+
+#buttonsCSS{
+    align-items: center;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
